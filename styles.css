@@ -16,6 +16,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height:auto;
     padding:1.25rem;
 }
 .mobile-view{
@@ -111,6 +112,8 @@ ul li a:hover{
 .intro-page{
     width: 100%;
     height: 100vh;
+    margin:0;
+    padding: 0;
     background: linear-gradient(
         135deg,
         rgba(0, 64, 77, 0.9) 0%,
@@ -130,6 +133,7 @@ ul li a:hover{
 .container1 .ikaris {
     font-size: 3.75rem;
     display: inline-block;
+    height: auto;
     border-right:0.125rem solid gray;
     overflow: hidden;
     white-space:nowrap;
@@ -145,8 +149,11 @@ ul li a:hover{
 @keyframes cursor{
     50%{border-color:gray}
 }
+.container1 .web-dev{
+    height: auto;
+}
 .container1 h3{
-    font-size: 2.5rem;
+    font-size:clamp(2rem, 3vh, 2.5rem);
 }
 .container1 p{
     font-size: 1.875rem;
@@ -174,24 +181,22 @@ ul li a:hover{
     color:white;
     font-weight: 600;
 }
-.about{
-    height: 100vh;
-}
+ /* ABOUT  */
 .container2{
     display:grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     width: auto;
     max-width: 50rem;
-    gap:2.5rem;
-    margin-bottom: 6.25rem;
+    gap:clamp(1rem,2vh,2.5rem);
+    margin-bottom:clamp(4rem,4vh,6.25rem);
     background-color:rgb(24,24,24);
     box-shadow: 0 0 0.8rem 0.8rem rgb(35,35,33);
     padding: 2.5rem;
     border-radius: 1.25rem;
 }
 .container2:hover{
-    padding: 3rem;
+    padding: clamp(1rem,2rem,3rem);
     transition: all 0.3s;
 }
 .wrapper{
@@ -200,23 +205,25 @@ ul li a:hover{
     align-items: center;
 }
 .about h2{
-    font-size: 3.125rem;
+    font-size: clamp(2.5rem, 3vh, 3.125rem);
     text-align: center;
     margin-bottom: 9.375rem;
     text-decoration: underline;
 }
 .container2 img{
     border: 0.625rem solid white;
-    width:18.75rem;
+    width:auto;
+    max-width:18.75rem;
     box-shadow: 0 0 0.5rem 0.5rem rgb(35,35,33);
 }
 .container2 .about-text{
+    width:auto;
     max-width: 25rem;
     p{
         font-size:1.2rem;
     }
     span{
-        font-size: 1.75rem;
+        font-size: clamp(1.25rem,3vh,1.75rem);
         color:rgb(0, 145, 255);
         text-shadow: 0.25rem 0.25rem 0.5rem rgb(15, 15, 90);
     }
@@ -225,7 +232,7 @@ ul li a:hover{
     height: 100vh;
 } */
 .skills h2{
-    font-size: 3rem;
+    font-size:clamp(2rem, 3vh, 3rem);
     padding: 2rem;
     margin-bottom: 8rem;
     text-decoration: underline;
@@ -270,7 +277,7 @@ ul li a:hover{
 }
 
 .projects h2{
-    font-size: 3rem;
+    font-size:clamp(2rem, 3vh, 3rem); 
     padding: 2rem;
     margin-bottom: 8rem;
     text-decoration: underline;
@@ -316,7 +323,7 @@ ul li a:hover{
     margin:1rem;
 }
 .contact  h2{
-    font-size: 3.5rem;
+    font-size:clamp(2rem, 3vh, 3rem); 
     margin-bottom: 6.25rem;
     text-decoration: underline;
     text-align: center;
@@ -486,3 +493,53 @@ ul li a:hover{
         z-index: 2;
     
 } */
+@media (max-width:40rem) {
+    .container2{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        width:100%;
+        width:auto;
+        padding: clamp();
+        max-width: 30rem;
+    }
+    .about{
+        max-width: 15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .about img{
+        width:10rem;
+        
+    }
+    .skills .box1{
+        grid-template-columns: 1fr 1fr;
+    }
+    .projects .box1 p{
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width:35.94rem){
+    .projects .box1{
+        grid-template-columns: 1fr;
+    } 
+    .contact-form #form, #form1{
+        width: 15rem;
+        align-items: center;
+    }
+}
+@media (max-width:26.55rem){
+    .ikaris{
+        font-size: 2rem;
+    }
+    .skills .box1{
+        align-items: center;
+        grid-template-columns: 1fr;
+    }
+    .contact-form #form, #form1{
+        width: 10rem;
+    }
+}
