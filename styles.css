@@ -184,8 +184,8 @@ ul li a:hover{
 }
  /* ABOUT  */
 .container2{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
+    display:flex;
+    justify-content: center;
     align-items: center;
     width: auto;
     max-width: 50rem;
@@ -209,12 +209,12 @@ ul li a:hover{
     font-size: clamp(2.5rem, 3vh, 3.125rem);
     text-align: center;
     margin-bottom: 9.375rem;
-    text-decoration: underline;
 }
 .container2 img{
     border: 0.625rem solid white;
     width:auto;
     max-width:18.75rem;
+    margin-right: 2rem;
     box-shadow: 0 0 0.5rem 0.5rem rgb(35,35,33);
 }
 .container2 .about-text{
@@ -222,6 +222,8 @@ ul li a:hover{
     max-width: 25rem;
     p{
         font-size:1.2rem;
+        margin:0;
+        padding:0;
     }
     span{
         font-size: clamp(1.25rem,3vh,1.75rem);
@@ -236,7 +238,6 @@ ul li a:hover{
     font-size:clamp(2rem, 3vh, 3rem);
     padding: 2rem;
     margin-bottom: 8rem;
-    text-decoration: underline;
     text-align: center;
 }
 .skills-img{
@@ -280,8 +281,7 @@ ul li a:hover{
 .projects h2{
     font-size:clamp(2rem, 3vh, 3rem); 
     padding: 2rem;
-    margin-bottom: 8rem;
-    text-decoration: underline;
+    margin-bottom: clamp(4rem,4vh,8rem);
     text-align: center;
 }
 .container3{
@@ -326,7 +326,6 @@ ul li a:hover{
 .contact  h2{
     font-size:clamp(2rem, 3vh, 3rem); 
     margin-bottom: 6.25rem;
-    text-decoration: underline;
     text-align: center;
 }
 .contact-form{
@@ -380,7 +379,7 @@ ul li a:hover{
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin: 3.125rem;
+    margin:clamp(2.125rem,2vh, 3.125rem);
     
 }
 .social a img{
@@ -536,6 +535,12 @@ ul li a:hover{
     .ikaris{
         font-size: 2rem;
     }
+    .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .skills .box1{
         align-items: center;
         grid-template-columns: 1fr;
@@ -562,7 +567,6 @@ ul li a:hover{
     font-size:clamp(2rem, 3vh, 3rem); 
     padding: 2rem;
     margin-bottom: 8rem;
-    text-decoration: underline;
     text-align: center;
 }
 .container3{
