@@ -6,17 +6,52 @@ body{
     color: #e7e7e7;
     margin:0;
     padding:0;
+    box-sizing: border-box;
     background: rgb(19, 19, 19);
 }
 *{
     scroll-behavior: smooth;
 }
-.container{
+.container-laptop{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:1.25rem;
 }
+.mobile-view{
+    display: none;
+}
+/* .container-mobile ul{
+    display: none;
+} */
+/* .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+.nav-toggle{
+    display: none;
+}
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    border: initial;
+}
+.navbar span{
+    display: block;
+    width: 1.563rem;
+    height: 0.125rem;
+    margin: 0.313rem 0;
+    transition: all 0.3s;
+} */
+ /* --------------  */
+
+ /* ----------------  */
+
+
 .logo ul{
     list-style-type: none;
     display: flex;
@@ -92,21 +127,23 @@ ul li a:hover{
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.container1 .ikaris{
-    font-size: 60px;
+.container1 .ikaris {
+    font-size: 3.75rem;
     display: inline-block;
+    border-right:0.125rem solid gray;
     overflow: hidden;
     white-space:nowrap;
-    border-right:0.125rem solid gray;
-    animation: typing 4s steps(30,end),blink-cursor 0.75s step-end infinite;
+    width: 100% ;
+    
+    animation: 
+        typing 4s steps(40),
+        cursor .4s step-end infinite alternate;
 }
 @keyframes typing{
     from{width:0;}
-    to{width:100%;}
 }
-@keyframes blink-cursor{
-    from, to{border-right-color:transparent;}
-    50%{border-right-color:gray;}
+@keyframes cursor{
+    50%{border-color:gray}
 }
 .container1 h3{
     font-size: 2.5rem;
@@ -148,6 +185,14 @@ ul li a:hover{
     max-width: 50rem;
     gap:2.5rem;
     margin-bottom: 6.25rem;
+    background-color:rgb(24,24,24);
+    box-shadow: 0 0 0.8rem 0.8rem rgb(35,35,33);
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+}
+.container2:hover{
+    padding: 3rem;
+    transition: all 0.3s;
 }
 .wrapper{
     display: flex;
@@ -159,12 +204,6 @@ ul li a:hover{
     text-align: center;
     margin-bottom: 9.375rem;
     text-decoration: underline;
-}
-.container2{
-    background-color:rgb(24,24,24);
-    box-shadow: 0 0 0.8rem 0.8rem rgb(35,35,33);
-    padding: 2.5rem;
-    border-radius: 1.25rem;
 }
 .container2 img{
     border: 0.625rem solid white;
@@ -186,10 +225,11 @@ ul li a:hover{
     height: 100vh;
 } */
 .skills h2{
-    font-size: 2.75rem;
+    font-size: 3rem;
+    padding: 2rem;
+    margin-bottom: 8rem;
     text-decoration: underline;
     text-align: center;
-    margin-bottom: 7rem;
 }
 .skills-img{
     display: flex;
@@ -247,10 +287,15 @@ ul li a:hover{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    border-radius: 2rem ;
     margin-bottom:9.375rem;
     gap:3rem;
     background:rgb(24,24,24);
     box-shadow:0 0 0.8rem 0.8rem rgb(35,35,33);     
+}
+.projects .box1:hover{
+    padding: 1rem;
+    transition: all 0.3s;
 }
 .box h3{
     font-size: 2rem;
@@ -270,10 +315,6 @@ ul li a:hover{
     max-width: 20rem;
     margin:1rem;
 }
-
-.contact{
-    height: 120vh;
-}
 .contact  h2{
     font-size: 3.5rem;
     margin-bottom: 6.25rem;
@@ -287,6 +328,7 @@ ul li a:hover{
 }
 .contact-form form{
     padding:2rem;
+    border-radius: 2rem;
     background: linear-gradient(
         135deg,
         rgba(0, 64, 77, 0.9) 0%,
@@ -294,18 +336,19 @@ ul li a:hover{
         );
 }
 .contact-form  #form, #form1{
-    width:auto;
-    height: auto;
-    max-width: 25rem;
+
+    width: 25rem;
     max-height: 3.1rem;
     margin: 0.625rem;
-    padding: 0.625rem;
+    padding: 1.5rem;
     border-radius: 1.25rem;
     border: none;
 }
 .contact-form .h3{
     display: flex;
     justify-content: center;
+    font-size: 1.5rem;
+    text-shadow: 0 0 3px #FF0000;
 }
 .contact-form .submit-btn{
     display: flex;
@@ -313,10 +356,11 @@ ul li a:hover{
 }
 .contact-form button{
     border: none;
-    padding:15px 70px;
-    border-radius: 25px;
+    padding:0.94rem 4.375rem;
+    border-radius: 1.563rem;
     cursor:pointer;
-    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center;
     color:rgb(0, 136, 255);
     font-weight: bold;
 }
@@ -328,7 +372,8 @@ ul li a:hover{
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 3.125rem;
+    margin: 3.125rem;
+    
 }
 .social a img{
     align-items: center;
@@ -366,16 +411,77 @@ ul li a:hover{
     color:white;
     opacity: 0.7;
 }
+@media (max-width:43.7rem) {
+    .container-laptop{
+        display: none;
+    }
+    .hr1{
+        display: none;
+    }
+    .mobile-view{
+        display: block;
+        margin: 0;
+        padding: 0;
+        top: 100%;
 
-@media (max-height:550px){
-    .social a img{
-        margin-bottom: 3.4rem;
+      background-color:rgb(19, 19, 19);
     }
-    .footer p{
-        margin-top: 1.5rem;
-        
+    .mobile-view .profile-pic-mobile{
+        border-radius: 50%;
+    }
+    .mobile-view ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+    }
+    .mobile-view ul li{
+        display: inline-block;
+        position: relative;
+        padding: 1rem 0;
+    }
+    .mobile-view ul li a{
+        display: block;
+        color: white;
+        background-color: gray;
+        padding: 0.5rem 2rem;
+        text-decoration: none;
+        margin-right: 1rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 1rem;
+        font-weight: bold;
+    }
+    .mobile-view ul li ul.dropdown li{
+        display: block;
+    }
+    .mobile-view ul li ul.dropdown{
+        width:100%;
+        position: absolute;
+        justify-content: center;
+        z-index: 999;
+        right: 0;
+        display: none ;
+    }
+    .mobile-view ul li ul.dropdown a{
+        margin-right: 1rem;
+    }
+    .mobile-view ul li a:hover{
+        background-color: #fff;
+        color: black;
+        transition: background-color 0.3s,color 0.3s;
+    }
+    .mobile-view ul li:hover ul.dropdown{
+        display: block;
     }
 }
-@media (max) {
+/* @media screen and (max-width: 48rem) {
+    .navbar {
+        display: block;
+        padding: 1rem;
+    }
+    .nav-toggle-label {
+        display: block;
+        z-index: 2;
     
-}
+} */
