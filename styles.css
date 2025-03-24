@@ -134,10 +134,11 @@ ul li a:hover{
     font-size:clamp(2.75rem, 5vh, 3.75rem);
     display: inline-block;
     height: auto;
+    max-width: fit-content;
     border-right:0.125rem solid gray;
     overflow: hidden;
     white-space:nowrap;
-    width: 100% ;
+    width: 100%;
     
     animation: 
         typing 4s steps(40),
@@ -165,14 +166,13 @@ ul li a:hover{
     gap:calc(1.5rem + 1.5vw);
     margin-top: 2rem;
 }
-.intro-btns  button{
+.intro-btns button{
     padding:0.75rem 2.2rem;
     border-radius:1.25rem;
     cursor:pointer;
     border: none;
-    font-size: 0.94rem;
-    text-align: center;
-    font-family: "Share Tech Mono", monospace;
+    font-size: 1rem;
+    font-family: "Share Tech Mono";
 }
 .intro-btns button:hover{
     padding:0.94rem 2.56rem;
@@ -295,13 +295,29 @@ ul li a:hover{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap:3rem;
     border-radius: 2rem ;
     margin-bottom:9.375rem;
-    gap:3rem;
+    
     background:rgb(24,24,24);
     box-shadow:0 0 0.8rem 0.8rem rgb(35,35,33);     
 }
 .projects .box1:hover{
+    padding: 1rem;
+    transition: all 0.3s;
+}
+.projects .box2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap:3rem;
+    border-radius: 2rem ;
+    margin-bottom:9.375rem;
+    
+    background:rgb(24,24,24);
+    box-shadow:0 0 0.8rem 0.8rem rgb(35,35,33);     
+}
+.projects .box2:hover{
     padding: 1rem;
     transition: all 0.3s;
 }
@@ -344,7 +360,7 @@ ul li a:hover{
 }
 .contact-form  #form, #form1{
 
-    width: 25rem;
+    width: clamp(16rem,15vh,25rem);
     max-height: 3.1rem;
     margin: 0.625rem;
     padding: 1.5rem;
@@ -360,6 +376,7 @@ ul li a:hover{
 .contact-form .submit-btn{
     display: flex;
     justify-content: center;
+    
 }
 .contact-form button{
     border: none;
@@ -390,6 +407,7 @@ ul li a:hover{
     max-height: 3rem;
     margin-left: 1.25rem;
     border-radius: 50%;
+    margin-bottom: clamp(1.75rem ,3vh, 2.5rem);
 }
 .social a img:hover{
     height: auto;
@@ -397,6 +415,7 @@ ul li a:hover{
     max-width: 3.5rem;
     max-height: 3.5rem;
     transition: all 0.3s;
+    
 }
 .footer{
     background: linear-gradient(
@@ -445,41 +464,47 @@ ul li a:hover{
     .mobile-view ul li{
         display: inline-block;
         position: relative;
-        padding: 1rem 0;
+        padding:1rem 0;
     }
+    .mobile-view ul li img{
+
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        box-shadow: #1c1e1e 0 0 0.5rem 0.5rem;
+    }
+    
     .mobile-view ul li a{
-        display: block;
+        display: inline-block;
         color: white;
+        margin-bottom: 0.2rem;
         background-color: gray;
         padding: 0.5rem 2rem;
         text-decoration: none;
         margin-right: 1rem;
         cursor: pointer;
-        border: none;
         border-radius: 1rem;
         font-weight: bold;
     }
-    .mobile-view ul li ul.dropdown li{
+    .mobile-view ul li .dropdown li{
         display: block;
+        
     }
-    .mobile-view ul li ul.dropdown{
-        width:100%;
+    .mobile-view ul li .dropdown{
+        max-width: fit-content;
         background-color: gray;
         position: absolute;
         justify-content: center;
         z-index: 999;
         right: 0;
         display: none ;
-    }
-    .mobile-view ul li ul.dropdown a{
-        margin-right: 1rem;
-    }
+    }  
     .mobile-view ul li a:hover{
         background-color: #fff;
         color: black;
         transition: background-color 0.3s,color 0.3s;
     }
-    .mobile-view ul li:hover ul.dropdown{
+    .mobile-view ul li:hover .dropdown{
         display: block;
     }
 }
@@ -495,19 +520,12 @@ ul li a:hover{
 } */
 @media (max-width:40rem) {
     .container2{
-        grid-template-columns: 1fr;
-        justify-items: center;
-        width:100%;
-        width:auto;
-        padding: clamp();
-        max-width: 30rem;
-    }
-    .about{
-        max-width: 15rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
+        width: auto;
+        width:100%;
     }
     .about img{
         width:10rem;
@@ -523,9 +541,21 @@ ul li a:hover{
 
 
 @media (max-width:35.94rem){
+    .container3{
+        display: grid;
+        grid-template-columns: 0.5fr;
+    }
     .projects .box1{
         grid-template-columns: 1fr;
+        padding: 1rem;
     } 
+    .projects .box2{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
     .contact-form #form, #form1{
         width: 15rem;
         align-items: center;
@@ -535,76 +565,78 @@ ul li a:hover{
     .ikaris{
         font-size: 2rem;
     }
-    .about{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
     .skills .box1{
         align-items: center;
         grid-template-columns: 1fr;
     }
-
+/* 
 
     .contact-form #form, #form1{
         width: 10rem;
-    }
-    .container3 .box{
-        width: 10rem;
-        padding:0;
-    }
+    } */
     .container3 .box1 {
-        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        
     }
     .box-img img{
         width:auto;
         max-width:15.75rem;
         margin:1rem;
     }
+
+    .social a img{
+
+        max-width: 2.5rem;
+        max-height: 2.5rem;
+        margin-left: 1.25rem;
+    }
+    .footer p{
+        font-size: 12px;
+    }
 }
-/* .projects h2{
-    font-size:clamp(2rem, 3vh, 3rem); 
-    padding: 2rem;
-    margin-bottom: 8rem;
-    text-align: center;
+@media (max-width:20rem){
+    .container2{
+        padding: 1rem;
+
+    }
+    .skills-img img{
+        width:100%;
+        align-content: center;
+    }
+    .skills-img{
+        padding-left:1.5rem ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .skills-img .box1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.75rem;
+    }
+    .contact-form form{
+        width: 15rem;
+        padding: 1rem;
+    }
+    .contact-form #form, #form1{
+        width: 10rem;
+        align-items: center;
+    }
+    .contact-form button{
+        padding:1rem 1.5rem;
+
+    }
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
 }
-.container3{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
- .projects .box1{
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    border-radius: 2rem ;
-    margin-bottom:9.375rem;
-    gap:3rem;
-    background:rgb(24,24,24);
-    box-shadow:0 0 0.8rem 0.8rem rgb(35,35,33);     
-}
-.projects .box1:hover{
-    padding: 1rem;
-    transition: all 0.3s;
-}
-.box h3{
-    font-size: 2rem;
-    color:rgb(0, 145, 255);
-    text-shadow: 0 0 3px #FF0000;
-}
-.box p{
-    font-size: 1.25rem;
-}
-.box-img img{
-    width:auto;
-    max-width:18.75rem;
-    margin:1rem;
-}
-.container3 .box{
-    width: auto;
-    max-width: 20rem;
-    margin:1rem;
-} */
