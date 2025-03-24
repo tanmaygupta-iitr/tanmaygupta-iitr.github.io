@@ -457,6 +457,7 @@ ul li a:hover{
     }
     .mobile-view ul li ul.dropdown{
         width:100%;
+        background-color: gray;
         position: absolute;
         justify-content: center;
         z-index: 999;
